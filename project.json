@@ -1,0 +1,22 @@
+{
+  "overview": "A jasmine flower maturity detection app that uses AI to analyze images and identify jasmine flowers at different growth stages — small bud, big bud, or bloom — with confidence percentages and visual bounding boxes.",
+  "features": [
+    "Upload image or capture via camera",
+    "AI-powered jasmine flower detection",
+    "Bounding boxes with maturity stage labels",
+    "Confidence percentage per detection",
+    "Multiple flowers detected in one image",
+    "Reset to analyze another image"
+  ],
+  "category": "tool",
+  "tags": [
+    "jasmine",
+    "flower",
+    "detection",
+    "ai",
+    "computer-vision",
+    "maturity",
+    "image-analysis"
+  ],
+  "last_updated": "2026-04-08T17:20:51.706Z"
+}

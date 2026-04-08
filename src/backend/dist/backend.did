@@ -1,0 +1,44 @@
+type http_request_result = 
+ record {
+   body: blob;
+   headers: vec http_header;
+   status: nat;
+ };
+type http_header = 
+ record {
+   name: text;
+   value: text;
+ };
+type TransformationOutput = 
+ record {
+   body: blob;
+   headers: vec http_header;
+   status: nat;
+ };
+type TransformationInput = 
+ record {
+   context: blob;
+   response: http_request_result;
+ };
+type DetectionResult = 
+ record {
+   boundingBox: BoundingBox;
+   confidence: float64;
+   stage: text;
+ };
+type BoundingBox = 
+ record {
+   height: float64;
+   width: float64;
+   x: float64;
+   y: float64;
+ };
+type AnalyzeResponse = 
+ variant {
+   err: text;
+   ok: vec DetectionResult;
+ };
+service : {
+  analyzeImage: (imageData: text, mimeType: text) -> (AnalyzeResponse);
+  transform: (input: TransformationInput) -> (TransformationOutput) query;
+}
